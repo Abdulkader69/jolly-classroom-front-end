@@ -1,7 +1,33 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { Fragment, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import InvoicesItem from '../src/components/InvoicesItem';
+import InvoicesTableHead from '../src/components/InvoicesTableHead';
 
 const Invoices: NextPage = () => {
+  const demoItem = [
+    { name: '1' },
+    { name: '2' },
+    { name: '3' },
+    { name: '4' },
+    { name: '5' },
+    { name: '6' },
+    { name: '7' },
+    { name: '8' },
+    { name: '9' },
+    { name: '10' },
+  ];
+  const invoicesDropdown = [
+    { name: 'Q2 2022' },
+    { name: 'Q2 2021' },
+    { name: 'Q2 2020' },
+    { name: 'Q2 2020' },
+    { name: 'Q2 2020' },
+  ];
+  const [selectedInvoicesDropdown, setSelectedInvoicesDropdown] = useState(
+    invoicesDropdown[0]
+  );
   return (
     <div className="page-container">
       <Head>
@@ -10,7 +36,93 @@ const Invoices: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="invoices-page"></div>
+      <div className="invoices-page">
+        <div className="w-full max-w-siteContainer mx-auto px-4">
+          <div className="page-head flex justify-between items-center py-6">
+            <div className="title">
+              <h1 className="text-2xl text-DarkGray font-bold Quicksand">
+                Invoices
+              </h1>
+            </div>
+            <div className="right">
+              <div className="invoices-dropdown">
+                <Listbox
+                  value={selectedInvoicesDropdown}
+                  onChange={setSelectedInvoicesDropdown}
+                >
+                  <div className="relative mt-1">
+                    <Listbox.Button className="relative w-full text-left rounded-full border border-solid border-MidGray py-2 pl-4 pr-16 appearance-none text-base text-PrimaryGray font-bold Quicksand">
+                      <span className="block truncate">
+                        {selectedInvoicesDropdown.name}
+                      </span>
+                      <span className="absolute inset-y-0 right-2 flex items-center pr-2 pointer-events-none">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M13.7068 0.29325C14.0978 0.68325 14.0978 1.31725 13.7068 1.70725L7.70675 7.70725C7.31675 8.09825 6.68275 8.09825 6.29275 7.70725L0.29275 1.70725C-0.0982494 1.31725 -0.0982494 0.68325 0.29275 0.29325C0.682751 -0.09775 1.31675 -0.09775 1.70675 0.29325L6.99975 5.58625L12.2928 0.29325C12.6827 -0.09775 13.3168 -0.09775 13.7068 0.29325Z"
+                            fill="#4A6FFF"
+                          />
+                        </svg>
+                      </span>
+                    </Listbox.Button>
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <Listbox.Options className="absolute w-full z-10 py-1 overflow-auto text-base bg-white rounded-lg shadow-header max-h-60">
+                        {invoicesDropdown.map(
+                          (invoicesDropdown, invoicesDropdownIdx) => (
+                            <Listbox.Option
+                              key={invoicesDropdownIdx}
+                              className={({ active }) =>
+                                `${
+                                  active
+                                    ? 'text-amber-900 bg-amber-100'
+                                    : 'text-gray-900'
+                                }
+                                  cursor-default select-none relative py-2 px-4`
+                              }
+                              value={invoicesDropdown}
+                            >
+                              {({ selected }) => (
+                                <>
+                                  <span
+                                    className={`${
+                                      selected ? 'font-medium' : 'font-normal'
+                                    } block truncate`}
+                                  >
+                                    {invoicesDropdown.name}
+                                  </span>
+                                </>
+                              )}
+                            </Listbox.Option>
+                          )
+                        )}
+                      </Listbox.Options>
+                    </Transition>
+                  </div>
+                </Listbox>
+              </div>
+            </div>
+          </div>
+
+          <div className="table bg-white w-full rounded-lg">
+            <InvoicesTableHead />
+            {demoItem.map((details) => (
+              <InvoicesItem details={details} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header
       id="main-header"
-      className="shadow-header py-4 fixed top-0 left-0 w-full"
+      className="shadow-header py-4 fixed top-0 left-0 w-full bg-white"
     >
       <div className="w-full max-w-siteContainer mx-auto px-4 flex items-center justify-between">
         <div className="logo">
