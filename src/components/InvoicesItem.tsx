@@ -3,14 +3,11 @@ import Link from 'next/link';
 import { Fragment, useState } from 'react';
 import { Listbox, Popover, Transition } from '@headlessui/react';
 
-export default function InvoicesItem({ details }) {
+export default function InvoicesItem() {
   const state = [{ name: 'pending' }, { name: 'sent' }, { name: 'paid' }];
   const [selected, setSelected] = useState(state[0]);
   return (
-    <div
-      className="table-item flex items-center px-12 py-4 transition ease-in hover:bg-SoftGray/40"
-      key={details.name}
-    >
+    <div className="table-item flex items-center px-12 py-4 transition ease-in hover:bg-SoftGray/40">
       <div className="name w-1/4">
         <Popover className="relative">
           {({ open }) => (
@@ -78,7 +75,7 @@ export default function InvoicesItem({ details }) {
       </div>
       <div className="amount w-[20%] text-base">500.00€</div>
       <div className="invoice w-[18%] text-base">
-        <Link href="/">
+        <Link href="/invoices/singleInvoice">
           <a className="text-BrandBlue">035-07-2022</a>
         </Link>
       </div>
@@ -94,7 +91,7 @@ export default function InvoicesItem({ details }) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute w-full py-1 overflow-auto text-base bg-white rounded-lg shadow-header max-h-60">
+              <Listbox.Options className="absolute w-full z-10 py-1 overflow-auto text-base bg-white rounded-lg shadow-header max-h-60">
                 {state.map((person, personIdx) => (
                   <Listbox.Option
                     key={personIdx}
