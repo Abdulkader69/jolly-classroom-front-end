@@ -19,9 +19,12 @@ module.exports = {
         Green: '#61CF9F',
         Yellow: '#FFC75E',
       },
-    },
-    maxWidth: {
-      siteContainer: '1232px',
+      borderRadius: {
+        head: '8px 8px 0px 0px',
+      },
+      maxWidth: {
+        siteContainer: '1232px',
+      },
     },
   },
   plugins: [],

@@ -106,8 +106,8 @@ const singleInvoice: NextPage = () => {
             </div>
           </div>
 
-          <div className="invoice-single-table pt-10 bg-white">
-            <div className="table-head flex items-center bg-SoftGray px-12 py-4">
+          <div className="invoice-single-table mt-10 bg-white">
+            <div className="table-head flex items-center bg-SoftGray px-12 py-4 overflow-hidden rounded-head">
               <div className="code w-[26.66%] text-base text-DarkGray font-bold Quicksand text-left">
                 Code
               </div>

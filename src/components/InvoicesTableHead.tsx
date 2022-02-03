@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function InvoicesTableHead() {
   return (
-    <div className="table-head flex items-center bg-SoftGray px-12 py-4">
+    <div className="table-head flex items-center bg-SoftGray px-12 py-4 overflow-hidden rounded-head">
       <div className="name w-1/4 text-base text-DarkGray font-bold Quicksand">
         Distributer
       </div>

@@ -92,7 +92,7 @@ export default function Header() {
             </ul>
           </div>
           <div className="author flex items-center">
-            <div className="head h-8 w-8 rounded-full bg-Yellow flex items-center justify-center mr-2">
+            <div className="head h-8 w-8 rounded-full bg-Yellow flex items-center justify-center mr-2 overflow-hidden">
               <svg
                 width="16"
                 height="20"
