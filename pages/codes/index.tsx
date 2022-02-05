@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import CreateCodesForm from '../../src/components/codes/CreateCodesForm';
 import Instructions from '../../src/components/codes/Instructions';
+import LastCodesTable from '../../src/components/codes/LastCodesTable';
 
 const Codes: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Codes: NextPage = () => {
       <div className="page page-codes">
         <Instructions />
         <CreateCodesForm />
+        <LastCodesTable />
       </div>
     </div>
   );

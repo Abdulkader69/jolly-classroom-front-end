@@ -16,6 +16,10 @@ export default function CreateCodesForm() {
     setSelectedYear(value);
   };
 
+  const handleFormSubmission = () => {
+    console.log(`Code: ${code} - Year: ${selectedYear}`);
+  };
+
   return (
     <div className="create-code-section w-full bg-LightGray max-w-siteContainer mx-auto flex relative pt-20 pb-28">
       <div className="w-full flex items-center">
@@ -76,7 +80,10 @@ export default function CreateCodesForm() {
               <button
                 className="rounded-full px-[10px] py-[4px] h-[48px] font-quicksand font-bold w-full text-white bg-BrandBlue disabled:bg-SoftGray disabled:text-[#D5D7E1] disabled:cursor-not-allowed hover:bg-BrandBlue"
                 disabled={code ? false : true}
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleFormSubmission();
+                }}
               >
                 Create Codes
               </button>
