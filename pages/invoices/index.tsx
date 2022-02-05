@@ -37,7 +37,7 @@ const Invoices: NextPage = () => {
       </Head>
 
       <div className="invoices-page">
-        <div className="w-full max-w-siteContainer mx-auto px-4">
+        <div className="w-full max-w-siteContainer mx-auto">
           <div className="page-head flex justify-between items-center py-6">
             <div className="title">
               <h1 className="text-2xl text-DarkGray font-bold Quicksand">

@@ -26,7 +26,7 @@ const Customers: NextPage = () => {
       </Head>
 
       <div className="invoices-page">
-        <div className="w-full max-w-siteContainer mx-auto px-4">
+        <div className="w-full max-w-siteContainer mx-auto">
           <div className="page-nav flex items-center py-3">
             <Link href="/">
               <a className="text-base text-BrandBlue">Home</a>

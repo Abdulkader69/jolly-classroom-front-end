@@ -23,7 +23,10 @@ module.exports = {
         head: '8px 8px 0px 0px',
       },
       maxWidth: {
-        siteContainer: '1232px',
+        siteContainer: '1230px',
+      },
+      fontFamily: {
+        quicksand: ['Quicksand', 'sans-serif'],
       },
     },
   },

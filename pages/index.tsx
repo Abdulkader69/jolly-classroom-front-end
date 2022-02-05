@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
       <div className="home-page">
         <div className="introduction-section">
-          <div className="w-full max-w-siteContainer mx-auto px-4 flex relative pt-20 pb-28">
+          <div className="w-full max-w-siteContainer mx-auto flex relative pt-20 pb-28">
             <div className="intro w-1/4 pr-4">
               <h1 className="text-DarkGray text-[40px] font-bold Quicksand">
                 Hello, Jane
